@@ -1,18 +1,16 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+import Head from "./head";
 
-const layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   return (
     <html>
-      <head>
-        <title>test Next.js 13</title>
-      </head>
+      <Head></Head>
       <body>
-        <header>header</header>
-        <section>{children}</section>
-        <footer>footer</footer>
+        <header>Common Header</header>
+        {children}
       </body>
     </html>
   );
 };
 
-export default layout;
+export default Layout;

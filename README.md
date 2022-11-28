@@ -2,6 +2,10 @@
 
 Front-end port : 3001
 
+# 2022 - 11 - 28
+
+폴더 기반 Dynamic Routing 적용 확인 / 파일 기반 x
+
 <!-- First, run the development server:
 
 ```bash
