@@ -4,14 +4,14 @@ const SectionList = (props: { list: NoteType[] }) => {
   const { list } = props ?? {};
   return (
     <ul>
-      <li key="main">
-        <Link href={{ pathname: "/test" }}>Test Main</Link>
+      <li>
+        <Link href={{ pathname: "/post" }}>Post Main</Link>
       </li>
       {list.map((li) => (
-        <li key={`list-${li.id}`}>
+        <li key={`post-list-${li.id}`}>
           <Link
             href={{
-              pathname: `/test/${li.id}`,
+              pathname: `/post/${li.id}`,
             }}
           >
             {li.title}

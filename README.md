@@ -2,7 +2,11 @@
 
 Front-end port : 3001
 
+DB : json-server
+
 최대한 Next 13 기능을 사용해보자.
+
+기본적인 CRUD
 
 # 2022 - 11 - 28
 
@@ -10,7 +14,9 @@ Front-end port : 3001
 
 # 2022 - 11 - 29
 
-query id 값 가져오는 것 확인
+query id 값 params로 가져오는 것 확인
+
+next 13 에서는 router를 next/navigation 에서 가져온다.
 
 <!-- First, run the development server:
 

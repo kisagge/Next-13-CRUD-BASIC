@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getPostList } from "../api/post";
 import Header from "../components/common/header";
 import SectionList from "./sectionList";
@@ -20,6 +21,7 @@ const Page = async () => {
           <SectionList list={list} />
         </section>
       </section>
+      <Link href="/create">Create Post</Link>
       <footer>Footer</footer>
     </>
   );

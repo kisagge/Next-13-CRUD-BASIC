@@ -1,4 +1,4 @@
-import { CreatePostReq } from "../app/create/schema";
+import { CreatePostReq, DeletePostReq, UpdatePostReq } from "./schema";
 import { config } from "../config";
 
 // get post list
@@ -17,7 +17,7 @@ export const getPost = async (id: string) => {
   const response = await fetch(`${config.apiBaseUrl}/post/${id}`, {
     method: "GET",
     headers: {
-      Accept: "application/json",
+      "Content-Type": "application/json",
     },
   });
   return (await response.json()) ?? {};
@@ -33,4 +33,26 @@ export const createPost = async (request: CreatePostReq) => {
     body: JSON.stringify(request),
   });
   return (await response.json()) ?? {};
+};
+
+// update post
+export const updatePost = async (request: UpdatePostReq) => {
+  const response = await fetch(`${config.apiBaseUrl}/post/${request.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(request),
+  });
+  return (await response.json()) ?? {};
+};
+
+// delete post
+export const deletePost = async (request: DeletePostReq) => {
+  const response = await fetch(`${config.apiBaseUrl}/post/${request.id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };

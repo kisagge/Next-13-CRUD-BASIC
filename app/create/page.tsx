@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 import { createPost } from "../../api/post";
-import { CreatePostReq } from "./schema";
+import { CreatePostReq } from "../../api/schema";
 
 const CreatePage = () => {
+  const router = useRouter();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -22,7 +25,8 @@ const CreatePage = () => {
       content,
     };
 
-    await createPost(request);
+    const data = await createPost(request);
+    router.push(`/post/${data.id}`);
   };
 
   return (
@@ -50,9 +54,10 @@ const CreatePage = () => {
         <label htmlFor="input-content" />
       </div>
 
-      <button type="button" onClick={onClickCreateButton}>
+      <button type="button" onClick={async (e) => onClickCreateButton(e)}>
         Create
       </button>
+      <Link href="/">Back</Link>
     </>
   );
 };
