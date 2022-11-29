@@ -11,10 +11,11 @@ const getData = async (id: string) => {
   return data;
 };
 
-const TestDetailPage = async ({ params }: NoteDetailPageParamsType) => {
+const PostDetailPage = async ({ params }: NoteDetailPageParamsType) => {
   const { post } = await getData(params.id);
   return (
     <>
+      <Header />
       <section>
         id - {post.id} / title - {post.title}
         <div>content - {post.content}</div>
@@ -24,4 +25,4 @@ const TestDetailPage = async ({ params }: NoteDetailPageParamsType) => {
   );
 };
 
-export default TestDetailPage;
+export default PostDetailPage;
