@@ -1,28 +1,15 @@
 import Link from "next/link";
-import { getPostList } from "../api/post";
 import Header from "../components/common/header";
-import SectionList from "./sectionList";
-
-const getData = async () => {
-  const data = {
-    list: await getPostList(),
-  };
-  return data ?? {};
-};
 
 const Page = async () => {
-  const { list } = await getData();
   return (
     <>
       <Header />
       <section>
         <h1>Main Page</h1>
-        <section>
-          <SectionList list={list} />
-        </section>
+        <Link href={{ pathname: "/post" }}>Posts</Link>
       </section>
-      <Link href="/post/create">Create Post</Link>
-      <footer>Footer</footer>
+      <footer>Main Footer</footer>
     </>
   );
 };

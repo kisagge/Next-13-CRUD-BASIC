@@ -47,7 +47,9 @@ const CreatePage = () => {
     <>
       <Header />
       <div>
-        {" "}
+        <label htmlFor="input-title">
+          <p>Title</p>
+        </label>
         <input
           type="text"
           id="input-title"
@@ -55,21 +57,21 @@ const CreatePage = () => {
           onChange={inputTitleHandler}
           value={title}
         />
-        <label htmlFor="input-title" />
       </div>
 
       <div>
-        {" "}
+        <label htmlFor="input-content">
+          <p>Content</p>
+        </label>
         <textarea
           id="input-content"
           placeholder="content"
           onChange={inputContentHandler}
           value={content}
         />
-        <label htmlFor="input-content" />
       </div>
 
-      <button type="button" onClick={async () => onClickCreateButton()}>
+      <button type="button" onClick={async () => await onClickCreateButton()}>
         Create
       </button>
       <Link href="/">Back</Link>
