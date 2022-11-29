@@ -1,14 +1,14 @@
 import { ReactNode } from "react";
-import Head from "./head";
 
-const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <html>
-      <Head></Head>
-      <body>
-        <header>Common Header</header>
-        {children}
-      </body>
+      <head>
+        <title>Hello Next 13</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body>{children}</body>
     </html>
   );
 };

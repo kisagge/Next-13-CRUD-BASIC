@@ -1,3 +1,7 @@
+// components
+import Header from "../../../components/common/header";
+
+// api
 import { getPost } from "../../../api/post";
 
 const getData = async (id: string) => {

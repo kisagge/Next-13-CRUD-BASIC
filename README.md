@@ -2,9 +2,15 @@
 
 Front-end port : 3001
 
+최대한 Next 13 기능을 사용해보자.
+
 # 2022 - 11 - 28
 
 폴더 기반 Dynamic Routing 적용 확인 / 파일 기반 x
+
+# 2022 - 11 - 29
+
+query id 값 가져오는 것 확인
 
 <!-- First, run the development server:
 
