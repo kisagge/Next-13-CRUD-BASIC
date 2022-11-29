@@ -3,6 +3,7 @@ import Header from "../../../components/common/header";
 
 // api
 import { getPost } from "../../../api/post";
+import Link from "next/link";
 
 const getData = async (id: string) => {
   const data = {
@@ -11,7 +12,7 @@ const getData = async (id: string) => {
   return data;
 };
 
-const PostDetailPage = async ({ params }: NoteDetailPageParamsType) => {
+const PostDetailPage = async ({ params }: PostDetailPageParamsType) => {
   const { post } = await getData(params.id);
   return (
     <>
@@ -20,6 +21,7 @@ const PostDetailPage = async ({ params }: NoteDetailPageParamsType) => {
         id - {post.id} / title - {post.title}
         <div>content - {post.content}</div>
       </section>
+      <Link href={`/post/modify/${post.id}`}>Modify</Link>
       <footer>Test Footer</footer>
     </>
   );

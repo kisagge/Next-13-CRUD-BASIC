@@ -3,11 +3,15 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
-import { createPost } from "../../api/post";
-import { CreatePostReq } from "../../api/schema";
+import { createPost } from "../../../api/post";
+import { CreatePostReq } from "../../../api/schema";
+import Header from "../../../components/common/header";
 
 const CreatePage = () => {
+  // router
   const router = useRouter();
+
+  // state
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -19,7 +23,17 @@ const CreatePage = () => {
     setContent(e.target.value);
 
   // button onClick Event
-  const onClickCreateButton = async (e: any) => {
+  const onClickCreateButton = async () => {
+    if (title.length <= 0) {
+      alert("Please enter title.");
+      return;
+    }
+
+    if (content.length <= 0) {
+      alert("Please enter content.");
+      return;
+    }
+
     const request: CreatePostReq = {
       title,
       content,
@@ -31,6 +45,7 @@ const CreatePage = () => {
 
   return (
     <>
+      <Header />
       <div>
         {" "}
         <input
@@ -54,7 +69,7 @@ const CreatePage = () => {
         <label htmlFor="input-content" />
       </div>
 
-      <button type="button" onClick={async (e) => onClickCreateButton(e)}>
+      <button type="button" onClick={async () => onClickCreateButton()}>
         Create
       </button>
       <Link href="/">Back</Link>

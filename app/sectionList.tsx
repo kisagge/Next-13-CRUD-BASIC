@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const SectionList = (props: { list: NoteType[] }) => {
+const SectionList = (props: { list: PostType[] }) => {
   const { list } = props ?? {};
   return (
     <ul>

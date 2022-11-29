@@ -21,7 +21,7 @@ const Page = async () => {
           <SectionList list={list} />
         </section>
       </section>
-      <Link href="/create">Create Post</Link>
+      <Link href="/post/create">Create Post</Link>
       <footer>Footer</footer>
     </>
   );

@@ -1,13 +1,19 @@
-interface NoteType {
+interface PostType {
   id: number;
   title: string;
 }
 
-interface NoteDetailPageParamsType {
+interface PostDetailPageParamsType {
   params: {
     id: string;
   };
   searchParams: {
     type: string;
+  };
+}
+
+interface ModifyPostPageParamsType {
+  params: {
+    id: string;
   };
 }
