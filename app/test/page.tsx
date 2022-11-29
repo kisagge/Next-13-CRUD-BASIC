@@ -1,4 +1,4 @@
-const TestPage = (): JSX.Element => {
+const TestPage = () => {
   return (
     <>
       <section>Test Page</section>

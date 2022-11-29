@@ -1,12 +1,29 @@
 import SectionList from "./sectionList";
 
-const Page = (): JSX.Element => {
+const getData = async () => {
+  const config = {
+    headers: {
+      Accept: "application/json",
+    },
+  };
+
+  const response = await fetch(
+    `https://my-json-server.typicode.com/kisagge/my-project-1/posts`,
+    config
+  );
+  const data = await response.json();
+
+  return data ?? [];
+};
+
+const Page = async () => {
+  const list = await getData();
   return (
     <>
       <section>
         <h1>Main Page</h1>
         <section>
-          <SectionList />
+          <SectionList list={list} />
         </section>
       </section>
       <footer>Footer</footer>

@@ -1,27 +1,31 @@
-"use client";
+const getData = async (id: string) => {
+  const config = {
+    headers: {
+      Accept: "application/json",
+    },
+  };
 
-import { NextPage } from "next";
-import Router, { useRouter } from "next/router";
+  const response = await fetch(
+    `https://my-json-server.typicode.com/kisagge/my-project-1/posts/${id}`,
+    config
+  );
 
-interface Props {
-  id: number;
-  pathname: string;
-}
+  const data = await response.json();
 
-const TestDetailPage: NextPage<Props> = ({ id, pathname }) => {
-  console.log(pathname);
+  return data;
+};
+
+const TestDetailPage = async ({ params }: NoteDetailPageParamsType) => {
+  const data = await getData(params.id);
   return (
     <>
-      <section>Test Detail Page id - {id}</section>
+      <section>
+        id - {data.id} / title - {data.title}
+        <div>content - {data.content}</div>
+      </section>
       <footer>Test Footer</footer>
     </>
   );
-};
-
-TestDetailPage.getInitialProps = async ({ query, pathname }) => {
-  console.log(pathname);
-  const id: number = Number(query.id);
-  return { id: id, pathname };
 };
 
 export default TestDetailPage;
