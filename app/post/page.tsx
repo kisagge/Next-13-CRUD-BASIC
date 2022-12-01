@@ -12,6 +12,7 @@ const getData = async () => {
 
 const PostPage = async () => {
   const { list } = await getData();
+  console.log(list);
   return (
     <>
       <Header />

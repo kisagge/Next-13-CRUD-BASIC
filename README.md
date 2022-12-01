@@ -18,6 +18,10 @@ query id 값 params로 가져오는 것 확인
 
 next 13 에서는 router를 next/navigation 에서 가져온다.
 
+# 2022 - 12 - 01
+
+delete 적용은 되지만 list가 최신화 되지 않음.
+
 <!-- First, run the development server:
 
 ```bash

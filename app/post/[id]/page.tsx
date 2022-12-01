@@ -22,6 +22,7 @@ const PostDetailPage = async ({ params }: PostDetailPageParamsType) => {
         <div>content - {post.content}</div>
       </section>
       <Link href={`/post/modify/${post.id}`}>Modify</Link>
+      <Link href="/post">Go to List</Link>
       <footer>Test Footer</footer>
     </>
   );

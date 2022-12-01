@@ -1,18 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { deletePost } from "../api/post";
 import { DeletePostReq } from "../api/schema";
 
 const SectionList = (props: { list: PostType[] }) => {
+  const router = useRouter();
   const { list } = props ?? { list: [] };
 
-  const onClickDeleteButton = async (id: number) => {
+  const onClickDeleteButton = (id: number) => {
     const request: DeletePostReq = {
       id,
     };
 
-    const data = await deletePost(request);
+    deletePost(request).then(() => {
+      router.refresh();
+    });
   };
 
   return (
@@ -29,10 +33,7 @@ const SectionList = (props: { list: PostType[] }) => {
           >
             {li.title}
           </Link>
-          <button
-            type="button"
-            onClick={async () => await onClickDeleteButton(li.id)}
-          >
+          <button type="button" onClick={() => onClickDeleteButton(li.id)}>
             Delete
           </button>
         </li>

@@ -6,8 +6,9 @@ export const getPostList = async () => {
   const response = await fetch(`${config.apiBaseUrl}/post`, {
     method: "GET",
     headers: {
-      Accept: "application/json",
+      "Content-Type": "application/json",
     },
+    cache: "no-store",
   });
   return (await response.json()) ?? [];
 };
