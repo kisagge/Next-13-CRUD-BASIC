@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "../components/common/header";
 
-const Page = async () => {
+const Page = () => {
   return (
     <>
       <Header />

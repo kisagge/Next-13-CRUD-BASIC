@@ -11,24 +11,14 @@
       "content": "content-2"
     },
     {
-      "id": 3,
-      "title": "hello 3",
-      "content": "hello content-3"
+      "title": "tst",
+      "content": "123123",
+      "id": 3
     },
     {
-      "title": "title",
-      "content": "test4",
+      "title": "fourth post",
+      "content": "test post",
       "id": 4
-    },
-    {
-      "title": "test post",
-      "content": "testcontent",
-      "id": 5
-    },
-    {
-      "title": "testtest",
-      "content": "111",
-      "id": 6
     }
   ]
 }
